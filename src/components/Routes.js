@@ -34,16 +34,12 @@ export const Routes = () => {
           foreignObjectProps={{
             width: 300,
             height: 200,
-            x: 50,
+            x: -500,
             y: 0,
           }}
         />
       ),
     }
-  }
-
-  const handleNodeClick = () => {
-    // console.log(e.target.data)
   }
 
   const renderCustomNodeElement = customNodeFnMapping['mixed'].fn;
@@ -75,11 +71,6 @@ export const Routes = () => {
         }
       </select>
 
-      {/* {routes.map((route, routeNumber) => (
-        <h1 key={routeNumber}>Route {routeNumber}</h1>
-      ))} */}
-
-      {/* <div id="treeWrapper" style={{ width: '40em', height: '30em' }}> */}
       <div>
         { selectedRoute >= 0 ?
           <div className='tree-ui'>
@@ -105,7 +96,6 @@ export const Routes = () => {
                   <h3>Vendors & Lead Times</h3>
                     <ul>
                     { moleculeDetails.molecule_details.catalog_entries.map((vendor, index) => {
-                        // return <li key={index}>{vendor.vendor_id}</li>
                         return <MoleculeDetailsVendor vendor={vendor} key={index} />
                       })
                     }

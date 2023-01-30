@@ -82,3 +82,7 @@ body select {
     font-size: 0.8em;
     margin: 0.2em 0;
 }
+
+.test {
+    font-family: Arial, Helvetica, sans-serif;
+}

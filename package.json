@@ -9,8 +9,11 @@
     "react": "^17.0.1",
     "react-d3-tree": "^2.0.1",
     "react-dom": "^17.0.1",
+    "react-inlinesvg": "^3.0.1",
     "react-jss": "^10.5.1",
     "react-scripts": "4.0.3",
+    "react-svg": "^16.0.0",
+    "svg-to-jsx": "^1.0.4",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

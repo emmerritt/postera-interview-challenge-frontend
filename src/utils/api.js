@@ -11,16 +11,22 @@ const fetchRoute = async ({routeIndex, setRoute}) => {
     setRoute(newRoute.data.tree);
 };
 
-const fetchMoleculeDetails = async ({routeIndex, smiles, setMoleculeDetails, setSelectedMolecule}) => {
+const fetchMoleculeDetails = async ({routeIndex, smiles, setMoleculeDetails}) => {
     const response = await fetch(`http://localhost:8000/moleculedetails?index=${routeIndex}&smiles=${smiles}`);
     const moleculeDetails = await response.json();
     console.log(moleculeDetails)
     setMoleculeDetails(moleculeDetails);
-    // setSelectedMolecule({name: smiles})
 };
+
+const fetchMoleculeSVG = async ({smiles}) => {
+    const response = await fetch(`http://localhost:8000/molecule?smiles=${smiles}`);
+    const moleculeSVG = await response.json();
+    return moleculeSVG.data;
+}
 
 export {
     fetchRoute,
     fetchRoutesList,
-    fetchMoleculeDetails
+    fetchMoleculeDetails,
+    fetchMoleculeSVG
 }

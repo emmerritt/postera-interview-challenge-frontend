@@ -22,18 +22,13 @@ const CustomNode = ({ nodeData = {}, triggerNodeToggle, foreignObjectProps = {},
                 fetchMoleculeDetails({routeIndex: selectedRoute, smiles: nodeData.name, setMoleculeDetails, setSelectedMolecule});
             }
         }
-        // setSelectedMolecule({name: nodeData.name});
 
     }
 
   return (
     <React.Fragment >
-        <circle 
-            r={20} 
-            onClick={() => {
-                console.log('click')
-            }}
-        ></circle>
+        
+        <MoleculeSVG smiles={nodeData.name} />
 
     <foreignObject {...foreignObjectProps}
             x="-100px"
@@ -54,7 +49,6 @@ const CustomNode = ({ nodeData = {}, triggerNodeToggle, foreignObjectProps = {},
           { nodeData.attributes && !hidden ?
                 <div
                     style={{
-                        // display: 'inline-block',
                         border: 'none',
                         margin: '5px',
                         backgroundColor: '#fff',
